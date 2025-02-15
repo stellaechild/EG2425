@@ -1,6 +1,6 @@
 ---
 Título: TPC1
-Data: ?
+Data: 
 Autores: Maria Cunha e Tomás Campinho
 UC: EG
 ---
