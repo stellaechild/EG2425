@@ -6,7 +6,7 @@ UC: EG
 ---
 # Conversão de uma Expressão para Lark
 
-Durante a aula, os docentes apresentaram o desafio de expressarexpressões que seguem a seguinte gramática em Lark:
+Durante a aula, os docentes apresentaram o desafio de reproduzir a seguinte gramática em Lark:
 
 ---
 Terminal: { '.', ';', '[', ']', num }
