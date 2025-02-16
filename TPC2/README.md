@@ -62,5 +62,25 @@ Finalmente, passamos esta informação ao parser e apresentamos a informação d
 Assim, obtemos o seguinte _output_, com a expressão de exemplo '+   [ 20.0:9.0 ]  [1.5 :19.0] .' (de modo a testar, também as mensagens de erro - CC1 e CC2):
 
 ```python
-vou ter q ir ao ubuntu q n tou a conseguir copiar o output praqui for some reason :D
+sentence
+  signal	+
+  interval
+    [
+    num	20.0
+    :
+    num	9.0
+    ]
+  interval
+    [
+    num	1.5
+    :
+    num	19.0
+    ]
+  .
+
+CC1 Error: interval [20.0:9.0] - end bound (9.0) must be greater than start bound (20.0).
+CC2 Error: interval [1.5:19.0] - start bound (1.5) must be greater than or equal to the previous end bound (9.0).
+
+Incorrect expression!
+
 ```
