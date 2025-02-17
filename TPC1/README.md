@@ -38,7 +38,8 @@ parser.erro = not (CC1) or not (CC2)
 Estas regras têm em atenção a estrutura da expressão que será convertida. Assim, definimos que esta expressão tem pelo menos uma estrutura 'intervalo'. Esta pode ser decomposta em cinco símbolos diferentes (correpondendo às regras lexicográficas), obtendo este aspeto : +/- [num:num].
 
 ```python
-sentence: signal interval+ DOT
+sentence: signal intervals DOT
+intervals: interval+
 signal: PLUS
       | MINUS
 interval: PE num COL num PD  
