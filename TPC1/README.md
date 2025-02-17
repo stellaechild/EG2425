@@ -63,7 +63,7 @@ COL:":"
 Finalmente, passamos esta informação ao parser e apresentamos a informação de forma facilmente legível devido ao método _tree.pretty()_.
 Assim, obtemos o seguinte _output_, com a expressão de exemplo '+   [ 20.0:9.0 ]  [1.5 :19.0] .' (de modo a testar, também as mensagens de erro - CC1 e CC2):
 
-```python
+```txt
 sentence
   signal	+
   interval
