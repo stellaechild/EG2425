@@ -9,6 +9,7 @@ UC: EG
 Durante a aula, os docentes apresentaram o desafio de reproduzir a seguinte gramática em Lark:
 
 ---
+```txt
 Terminal: { '.', ';', '[', ']', num }
 Non-Terminal: { S, Is, RI, I }
 Production Rules (P):
@@ -29,6 +30,7 @@ CC1: p[4] > p[2] &
 CC2: p[2] >= parser.anterior
 parser.anterior = p[4]
 parser.erro = not (CC1) or not (CC2)
+```
 
 ---
 ## Regras Sintáticas
