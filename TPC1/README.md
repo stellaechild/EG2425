@@ -62,28 +62,30 @@ COL:":"
 ## Output
 
 Finalmente, passamos esta informação ao parser e apresentamos a informação de forma facilmente legível devido ao método _tree.pretty()_.
-Assim, obtemos o seguinte _output_, com a expressão de exemplo '+   [ 20.0:9.0 ]  [1.5 :19.0] .' (de modo a testar, também as mensagens de erro - CC1 e CC2):
+Assim, obtemos o seguinte _output_, com a expressão de exemplo "- [1.0:9.0] [15.0:3.0].":
 
 ```txt
 sentence
-  signal	+
-  interval
-    [
-    num	20.0
-    :
-    num	9.0
-    ]
-  interval
-    [
-    num	1.5
-    :
-    num	19.0
-    ]
+  signal	-
+  intervals
+    interval
+      [
+      num	1.0
+      :
+      num	9.0
+      ]
+    interval
+      [
+      num	15.0
+      :
+      num	3.0
+      ]
   .
 
-CC1 Error: interval [20.0:9.0] - end bound (9.0) must be greater than start bound (20.0).
-CC2 Error: interval [1.5:19.0] - start bound (1.5) must be greater than or equal to the previous end bound (9.0).
+CC1 Error: interval [1.0:9.0] is in the wrong order according to the sentence signal '-'
+CC2 Error: interval [15.0:3.0] starts with 15.0 but previous interval ends with 9.0
 
-Incorrect expression!
-
+IsValid: False 
+Number of intervals: 2 
+Largest interval width: 12.0
 ```
