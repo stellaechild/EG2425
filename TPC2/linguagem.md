@@ -152,7 +152,7 @@ io_operation: "read" "(" NAME ")"
   write("Hello, World!")
   ```
 
-### Tokens
+## Tokens
 ```ebnf
 %import common.CNAME -> NAME
 %import common.NUMBER
