@@ -26,7 +26,7 @@ type: "int" | "set" | "array" | "seq" | "tuple" | "string"
 ```
 - Declares a variable:  
   ```
-  var x: int = 10
+  var:int x = 10
   ```
 
 ### Assignments
