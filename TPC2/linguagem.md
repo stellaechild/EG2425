@@ -10,14 +10,6 @@ statement: declaration
          | loop
          | io_operation
 ```
-- Each `statement` can be:
-  - A **declaration** (`var:int x = 10`)
-  - An **assignment** (`x = 5`)
-  - A **function definition** (`func add(a, b) { ... }`)
-  - A **function call** (`add(4, 5)`)
-  - A **conditional** (`if x > 5 then { ... }`)
-  - A **loop** (`while x < 10 { ... }`)
-  - An **I/O operation** (`write(x)`)
 
 ### Declarations
 ```ebnf
