@@ -101,6 +101,7 @@ case_option: "when" expr "=>" "{" statement+ "}"
   case x {
       when 1 => { write("One") }
       when 2 => { write("Two") }
+      else { write("Unknown case") }
   }
   ```
 
@@ -109,13 +110,21 @@ case_option: "when" expr "=>" "{" statement+ "}"
 loop: "while" expr "{" statement+ "}"
     | "repeat" "{" statement+ "}" "until" expr
     | "for" NAME "in" expr "{" statement+ "}"
+
 ```
 - **For Loop:**
-  ```
+```
   for i in range(1, 10) {
       write(i)
   }
-  ```
+
+var:string text = "hello"
+
+  for c in text {
+      write(c)
+  } 
+
+```
 - **While Loop:**
   ```
   while x < 5 {
@@ -143,4 +152,44 @@ io_operation: "read" "(" NAME ")"
 - **Write:**
   ```
   write("Hello, World!")
+  ```
+- **Acess Memory**
+```ebnf
+memory_op: "&" NAME   // Reference (get memory address)
+         | "*" NAME   // Dereference pointer
+         | "alloc" "<" type ">" "(" expr? ")"  // Allocate memory
+         | "free" "(" NAME ")"  // Deallocate memory
+```
+- **Referencing and Dereferencing pointers**
+  ```
+var:int x = 10
+var:int* p = &x   // p stores the address of x
+write(*p)         // Dereferencing p gives 10
+
+var:int* p = alloc<int>(1)  // Allocating memory for 1 integer
+*p = 42
+write(*p)  // Prints 42
+free(p)    // Free memory
+  ```
+
+- **Allocating memory**
+  ```
+var:int* arr = alloc<int>(5)  // Allocate space for 5 integers
+  ```
+- **For Loop:**
+  ```
+for i in range(0, 5) {
+    arr[i] = i * 2  // Store values
+}
+write(arr[2])  // Prints 4
+free(arr)  // Deallocate memory
+  ```
+- **While Loop:**
+  ```
+var: int i = 0
+
+  while i < 5 {
+      arr[i] = i*2
+      i++
+  }
   ```
