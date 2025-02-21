@@ -153,7 +153,7 @@ io_operation: "read" "(" NAME ")"
   ```
   write("Hello, World!")
   ```
-- **Acess Memory**
+### Dynamic Memory
 ```ebnf
 memory_op: "&" NAME   // Reference (get memory address)
          | "*" NAME   // Dereference pointer
@@ -161,7 +161,7 @@ memory_op: "&" NAME   // Reference (get memory address)
          | "free" "(" NAME ")"  // Deallocate memory
 ```
 - **Referencing and Dereferencing pointers**
-  ```
+```
 var:int x = 10
 var:int* p = &x   // p stores the address of x
 write(*p)         // Dereferencing p gives 10
@@ -170,26 +170,26 @@ var:int* p = alloc<int>(1)  // Allocating memory for 1 integer
 *p = 42
 write(*p)  // Prints 42
 free(p)    // Free memory
-  ```
+```
 
-- **Allocating memory**
-  ```
+- **Allocating memory in Structures**
+```
 var:int* arr = alloc<int>(5)  // Allocate space for 5 integers
-  ```
+```
 - **For Loop:**
-  ```
+```
 for i in range(0, 5) {
     arr[i] = i * 2  // Store values
 }
 write(arr[2])  // Prints 4
 free(arr)  // Deallocate memory
-  ```
+```
 - **While Loop:**
-  ```
+```
 var: int i = 0
 
   while i < 5 {
       arr[i] = i*2
       i++
   }
-  ```
+```
