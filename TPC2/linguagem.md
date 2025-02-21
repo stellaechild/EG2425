@@ -30,7 +30,7 @@ assignment: NAME "=" expr
   x = 5
   ```
 
-#### Expressions
+### Expressions
 ```ebnf
 expr: term
     | expr ("+"|"-") term
@@ -43,6 +43,7 @@ expr: term
   a % b
   ```
 
+#### Terms
 ```ebnf
 term: factor
     | factor "[" expr "]"  // Array indexing
@@ -143,16 +144,3 @@ io_operation: "read" "(" NAME ")"
   ```
   write("Hello, World!")
   ```
-
-## Tokens
-```ebnf
-%import common.CNAME -> NAME
-%import common.NUMBER
-%import common.ESCAPED_STRING -> STRING
-%import common.WS
-%ignore WS
-```
-- **`NAME`**: Variable or function names.
-- **`NUMBER`**: Numeric values.
-- **`STRING`**: Text values.
-- **`WS`**: Whitespaces (ignored).
