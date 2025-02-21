@@ -30,7 +30,7 @@ assignment: NAME "=" expr
   x = 5
   ```
 
-### Expressions
+#### Expressions
 ```ebnf
 expr: term
     | expr ("+"|"-") term
