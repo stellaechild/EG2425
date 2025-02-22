@@ -13,12 +13,12 @@ statement: declaration
 
 ### Declarations
 ```ebnf
-declaration: "var" ":" type NAME "=" expr
+declaration: "var" ":" type NAME
 type: "int" | "set" | "array" | "seq" | "tuple" | "string"
 ```
 - Declares a variable:  
   ```
-  var:int x = 10
+  var:int x
   ```
 
 ### Assignments
