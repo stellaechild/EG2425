@@ -9,16 +9,17 @@ statement: declaration
          | conditional
          | loop
          | io_operation
+         | memory_operation
 ```
 
 ### Declarations
 ```ebnf
-declaration: "var" ":" type NAME
+declaration: type NAME
 type: "int" | "set" | "array" | "seq" | "tuple" | "string"
 ```
 - Declares a variable:  
   ```
-  var:int x
+  int x
   ```
 
 ### Assignments
@@ -118,7 +119,7 @@ loop: "while" expr "{" statement+ "}"
       write(i)
   }
 
-var:string text = "hello"
+string text = "hello"
 
   for c in text {
       write(c)
@@ -155,18 +156,18 @@ io_operation: "read" "(" NAME ")"
   ```
 ### Dynamic Memory
 ```ebnf
-memory_op: "&" NAME   // Reference (get memory address)
+memory_operation: "&" NAME   // Reference (get memory address)
          | "*" NAME   // Dereference pointer
          | "alloc" "<" type ">" "(" expr? ")"  // Allocate memory
          | "free" "(" NAME ")"  // Deallocate memory
 ```
 - **Referencing and Dereferencing pointers**
 ```
-var:int x = 10
-var:int* p = &x   // p stores the address of x
-write(*p)         // Dereferencing p gives 10
+int x = 10
+int* p = &x   // p stores the address of x
+write(*p)     // Dereferencing p gives 10
 
-var:int* p = alloc<int>(1)  // Allocating memory for 1 integer
+int* p = alloc<int>(1)  // Allocating memory for 1 integer
 *p = 42
 write(*p)  // Prints 42
 free(p)    // Free memory
@@ -174,22 +175,5 @@ free(p)    // Free memory
 
 - **Allocating memory in Structures**
 ```
-var:int* arr = alloc<int>(5)  // Allocate space for 5 integers
-```
-- **For Loop:**
-```
-for i in range(0, 5) {
-    arr[i] = i * 2  // Store values
-}
-write(arr[2])  // Prints 4
-free(arr)  // Deallocate memory
-```
-- **While Loop:**
-```
-var: int i = 0
-
-  while i < 5 {
-      arr[i] = i*2
-      i++
-  }
+int* arr = alloc<int>(5)  // Allocate space for 5 integers
 ```
