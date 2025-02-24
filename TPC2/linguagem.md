@@ -57,7 +57,7 @@ term: factor
 ```
 - `term` allows:
   - **Array indexing:** (`arr[2]`)
-  - **Field selection:** (`person.name`)
+  - **Field selection:** (`person.age`)
   - **Sequence operations:**  
     ```
     cons(1, my_list)   // Add 1 to the start
