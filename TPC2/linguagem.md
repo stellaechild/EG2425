@@ -108,19 +108,18 @@ case_option: "when" expr "=>" "{" statement+ "}"
 
 ### Loops
 ```ebnf
-loop: "while" expr "{" statement+ "}"
+loop: "for" NAME "in" expr "{" statement+ "}"
+    | "while" expr "{" statement+ "}"
     | "repeat" "{" statement+ "}" "until" expr
-    | "for" NAME "in" expr "{" statement+ "}"
 
 ```
 - **For Loop:**
 ```
-  for i in range(1, 10) {
+  for i in 1..10 {
       write(i)
   }
 
-string text = "hello"
-
+  string text = "hello"
   for c in text {
       write(c)
   } 
